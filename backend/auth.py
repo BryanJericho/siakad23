@@ -35,7 +35,7 @@ def login():
         
     if 'user' in session:
         flash('Anda Sudah Login','warning')
-        return redirect('mahasiswaapp.mahasiswa')
+        return redirect(url_for('mahasiswaapp.mahasiswa'))
 
         
     return render_template('login.html')
