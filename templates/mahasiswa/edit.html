@@ -1,0 +1,55 @@
+{% extends 'layout/base.html' %} {% set title = 'Edit Mahasiswa' %} {% set
+page_active = 'mahasiswa' %} {% block _content %}
+<h1>Edit Mahasiswa</h1>
+
+<form action="" method="post">
+  <div class="form-group mb-3">
+    <label for="nama_lengkap" class="form-label"><b>Nama lengkap</b></label>
+    <input
+      class="form-control"
+      type="text"
+      id="nama_lengkap"
+      placeholder="Masukkan Nama Lengkap"
+      required
+      name="nama_lengkap"
+      value="{{data.nama_lengkap}}"
+    />
+  </div>
+  <div class="form-group mb-3">
+    <label for="nim" class="form-label"><b>NIM</b></label>
+    <input
+      class="form-control"
+      type="text"
+      id="nim"
+      placeholder="Masukkan NIM"
+      required
+      name="nim"
+      value="{{data.nim}}"
+    />
+  </div>
+  <div class="form-group mb-3">
+    <label for="tanggal_lahir" class="form-label"><b>Tanggal Lahir</b></label>
+    <input
+      class="form-control"
+      type="date"
+      id="tanggal_lahir"
+      required
+      name="tanggal_lahir"
+      value="{{data.tanggal_lahir}}"
+    />
+  </div>
+  <div class="form-group mb-3">
+    <label for="jurusan" class="form-label"><b>Jurusan</b></label>
+    <select class="form-select" id="jurusan" name="jurusan" required>
+      <option value="">--Pilih Satu--</option>
+      <option value="Teknik Informatika" {% if data.jurusan == 'Teknik Informatika'%}selected{% endif %}>Teknik Informatika</option>
+      <option value="Sistem Informasi"{% if data.jurusan == 'Sistem Informasi'%}selected{% endif %}>Sistem Informasi</option>
+      <option value="Security Engginer" {% if data.jurusan == 'Security Engginer'%}selected{% endif %}>Security Engginer</option>
+      <option value="Data Science" {% if data.jurusan == 'Data Science'%}selected{% endif %}>Data Science</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary w-100">Edit Mahasiswa</button>
+</form>
+
+{% endblock %}

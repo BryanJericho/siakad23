@@ -1,0 +1,55 @@
+{% extends 'layout/base.html' %} {% set page_active = 'login' %} {% block
+_content %}
+<h1>Ini adalah Halaman Register</h1>
+
+<form action="" method="post">
+  <div class="form-group mb-3">
+    <label for="username" class="form-label"><b>Username</b></label>
+    <input
+      class="form-control"
+      type="text"
+      id="username"
+      placeholder="Masukkan Username"
+      required
+      name="username"
+    />
+  </div>
+  <div class="form-group mb-3">
+    <label for="nama_lengkap" class="form-label"><b>Nama Lengkap</b></label>
+    <input
+      class="form-control"
+      type="text"
+      id="nama_lengkap"
+      placeholder="Masukkan Username"
+      required
+      name="nama_lengkap"
+    />
+  </div>
+  <div class="form-group mb-3">
+    <label for="password" class="form-label"><b>Password</b></label>
+    <input
+      class="form-control"
+      type="password"
+      id="password"
+      placeholder="Masukkan password"
+      required
+      name="password"
+    />
+  </div>
+  <div class="form-group mb-3">
+    <label for="conf_password" class="form-label"
+      ><b>Konfirmasi Password</b></label
+    >
+    <input
+      class="form-control"
+      type="password"
+      id="conf_password"
+      placeholder="Masukkan Konfirmasi password"
+      required
+      name="conf_password"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary w-100">Register</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'layout/base.html' %} {% set title = 'Lihat Mahasiswa' %} {% block
+_content %}
+<h1>Lihat {{ data.nama_lengkap }}</h1>
+
+<p>Nama Lengkap : {{ data.nama_lengkap }}</p>
+<p>NIM :{{ data.nim }}</p>
+<p>Jurusan : {{ data.jurusan }}</p>
+<p>Status : {{ data.status }}</p>
+<p>Tanggal Lahir : {{ data.tanggal_lahir }}</p>
+
+{% endblock %}

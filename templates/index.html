@@ -1,0 +1,22 @@
+{% extends 'layout/base.html' %} {% set page_active = 'home' %} {% set title =
+'Halaman Utama' %}{% block _content %}
+
+<div class="row">
+  <div class="col-xl-3 col-md-6 mt-4">
+    <div class="card bg-primary text-white mb-4">
+      <div class="card-body">
+        <p>Jumlah Mahasiswa</p>
+        <h3>{{data.mahasiswa}}</h3>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-md-6 mt-4">
+    <div class="card bg-success text-white mb-4">
+      <div class="card-body">
+        <p>Jumlah Jurusan</p>
+        <h3>{{data.jurusan}}</h3>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}

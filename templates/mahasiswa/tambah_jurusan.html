@@ -1,0 +1,13 @@
+{% extends 'layout/base.html' %} {% set title = 'Tambah Mahasiswa' %} {% set
+page_active = 'mahasiswa' %} {% block _content %}
+<h1>Tambah Jurusan</h1>
+
+<form action="" method="post">
+  <div class="form-group mb-3">
+    <label for="nama_lengkap" class="form-label"><b>Jurusan</b></label>
+    <input class="form-control" type="text" id="jurusan" placeholder="Masukkan Jurusan" required name="jurusan" />
+  </div>
+  <button type="submit" class="btn btn-outline-info w-100">Tambah Jurusan</button>
+</form>
+
+{% endblock %}

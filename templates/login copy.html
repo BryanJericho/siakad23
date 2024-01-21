@@ -1,0 +1,35 @@
+{% extends 'layout/base.html' %} {% set page_active = 'login' %} {% set title =
+'Login' %} {% block _content %}
+<h1>Ini adalah Halaman Login</h1>
+
+<form action="/login" method="post">
+  <!-- actionnya mengarah ke sub page yang ingin dibuka -->
+  <div class="form-group mb-3">
+    <label for="username" class="form-label"><b>Username</b></label>
+    <input
+      class="form-control"
+      type="text"
+      id="username"
+      placeholder="Masukkan Username"
+      required
+      name="username"
+    />
+  </div>
+  <div class="form-group mb-3">
+    <label for="password" class="form-label"><b>Password</b></label>
+    <input
+      class="form-control"
+      type="password"
+      id="password"
+      placeholder="Masukkan password"
+      required
+      name="password"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary w-100">Login</button>
+</form>
+
+<div class="text-center">
+  <a href="/register">Daftar Akun</a>
+</div>
+{% endblock %}

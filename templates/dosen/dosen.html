@@ -1,0 +1,40 @@
+{% extends 'layout/base.html' %} {% set page_active = 'dosen' %} {% set title =
+'Lihat Dosen' %} {% block _content %}
+
+<h1 class="display-5">Daftar Dosen</h1>
+
+<table class="table mt-4">
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Nama Lengkap</th>
+      <th>NIP</th>
+      <th>Status</th>
+      <th>Mata Kuliah Prodi</th>
+      <th>Aksi</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i.nama_lengkap }}</td>
+      <td>{{ i['nip'] }}</td>
+      <td>
+        {% if i.status == true %}
+        <button class="btn btn-success btn-sm">Aktif</button>
+        {% else %}
+        <button class="btn btn-danger btn-sm">Tidak Aktif</button>
+        {% endif %}
+      </td>
+      <td>{{ i.mata_kuliah_prodi }}</td>
+      <td>
+        <a href="/dosen/lihat/{{ i.nip }}" class="btn btn-info btn-sm">Lihat</a>
+        <a href="#" class="btn btn-primary btn-sm">Edit</a>
+        <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

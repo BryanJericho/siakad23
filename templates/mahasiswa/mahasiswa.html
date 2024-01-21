@@ -1,0 +1,45 @@
+{% extends 'layout/base.html' %} {% set page_active = 'mahasiswa' %} {% set
+title = 'Lihat Mahasiswa' %} {% block _content %}
+
+<h1 class="display-5">Daftar Mahasiswa</h1>
+<a href="{{ url_for('mahasiswaapp.tambah_mahasiswa') }}" class="btn btn-outline-info">Tambah Mahasiswa</a>
+
+<table class="table mt-4">
+  <thead>
+    <tr>
+      <th>No</th>
+      <th></th>
+      <th>Nama Lengkap</th>
+      <th>NIM</th>
+      <th>Status</th>
+      <th>Jurusan</th>
+      <th>Aksi</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for d in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>
+        <img src="{{d.photoURL or 'img/default1.png'}}" width="50px" alt="" />
+      </td>
+      <td>{{ d.nama_lengkap }}</td>
+      <td>{{ d['nim'] }}</td>
+      <td>
+        {% if d.status == true %}
+        <button class="btn btn-success btn-sm">Aktif</button>
+        {% else %}
+        <button class="btn btn-danger btn-sm">Tidak Aktif</button>
+        {% endif %}
+      </td>
+      <td>{{ d.jurusan }}</td>
+      <td>
+        <a href="/mahasiswa/lihat/{{ d.id }}" class="btn btn-info btn-sm">Lihat</a>
+        <a href="/mahasiswa/edit/{{ d.id }}" class="btn btn-primary btn-sm">Edit</a>
+        <a href="{{url_for('mahasiswaapp.hapus_mahasiswa', uid = d.id)}}" class="btn btn-danger btn-sm">Hapus</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

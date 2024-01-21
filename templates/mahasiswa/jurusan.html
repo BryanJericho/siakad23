@@ -1,0 +1,36 @@
+{% extends 'layout/base.html' %} {% set page_active = 'jurusan' %} {% set title
+= 'Lihat Jurusan' %} {% block _content %}
+<h1>Ini adalah halaman jurusan</h1>
+<a href="{{ url_for('jurusanapp.tambah_jurusan') }}" class="btn btn-info"
+  >Tambah Jurusan</a
+>
+
+<table class="table mt-4">
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Jurusan</th>
+      <th>Aksi</th>
+      <th>Status</th>
+      <!-- Tambahkan kolom untuk aksi -->
+    </tr>
+  </thead>
+  <tbody>
+    {% for d in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ d.jurusan }}</td>
+      <td>
+        <a
+          href="{{ url_for('jurusanapp.hapus_jurusan', uid=d.id) }}"
+          class="btn btn-danger btn-sm"
+        >
+          Hapus
+        </a>
+      </td>
+      <td>Aktif</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
