@@ -24,7 +24,7 @@ app.register_blueprint(dosenapp)
 # routing 
 @app.route('/')
 def index():
-  return redirect (url_for('authapp.login'))
+    return redirect(url_for('authapp.login'))
 
 if __name__ == '__main__':
   app.run(debug=True, port=5005)

@@ -92,4 +92,5 @@ def login_required(f):
 @login_required
 def dashboard():
     data = db.collection('counter').document('counter').get().to_dict()
-    return render_template ('index.html', data=data)
+    
+    return render_template('index.html',data=data)
